@@ -36,6 +36,7 @@ class WeatherService:
             aod=aod
         )
     
+    # TODO: Add any additional params that are needed
     async def get_comfort(age: float, weight: float, height: float, sex: Sex) -> ComfortDTO:
         # TODO: Get local stored json which will be saved when get_weather function will be used 
         weather_forecast_data = json()
