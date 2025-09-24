@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from app.services.comfort_service import Sex
 
 class WeatherDTO(BaseModel):
     humidity: float
@@ -8,3 +9,6 @@ class WeatherDTO(BaseModel):
     uv_index: int
     cloudcover: float
     aod: float
+
+class ComfortDTO(BaseModel):
+    pass

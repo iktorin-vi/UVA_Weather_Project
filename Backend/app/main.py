@@ -8,4 +8,4 @@ app = FastAPI(title="Weather API with SOLID")
 app.include_router(weather_router)
 @app.get("/")
 async def root():
-    return {"message": "Weather API працює! Використовуй /weather?city=Kyiv"}
+    return {"message": "Weather API працює! Використовуй /weather/forecast?city=Kyiv"}

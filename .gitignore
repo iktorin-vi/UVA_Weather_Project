@@ -19,6 +19,11 @@ pip-wheel-metadata/
 *.secret
 *.key
 
+.venv/
+venv/
+ENV/
+env/
+
 .idea/
 *.iml
 .vscode/
