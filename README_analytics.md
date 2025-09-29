@@ -41,40 +41,6 @@ comfort_X = β₀ + β₁×temperature_norm + β₂×humidity_norm + β₃×wind
 
 ---
 
-## Specific Formulas
-
-### 1. Comfort by Temperature
-comfort_temperature = 0.648906 - 0.113674×temperature_norm + 0.006831×humidity_norm
-- 0.001155×wind_speed_norm + 0.002198×UVA_norm
-+ 0.010385×AOD_norm - 0.002946×sex_norm - 0.028075×age_norm
-- 0.029417×height_norm + 0.051113×weight_norm
-- 0.064589×BMI_norm
-### 2. Comfort by Humidity
-comfort_humidity = 0.636105 - 0.005279×temperature_norm - 0.097257×humidity_norm
-+ 0.004332×wind_speed_norm + 0.001107×UVA_norm
-- 0.002452×AOD_norm + 0.000287×sex_norm - 0.000399×age_norm
-- 0.052156×height_norm + 0.097753×weight_norm
-- 0.127599×BMI_norm
-### 3. Comfort by UVA Radiation
-comfort_UVA = 0.455344 + 0.000306×temperature_norm + 0.000452×humidity_norm
-- 0.000119×wind_speed_norm - 0.289377×UVA_norm + 0.000268×AOD_norm
-+ 0.047674×sex_norm + 0.000190×age_norm + 0.000622×height_norm
-- 0.001603×weight_norm + 0.002149×BMI_norm
-
-### 4. Comfort by Aerosol Optical Depth (AOD)
-comfort_AOD = 0.422675 + 0.000438×temperature_norm - 0.000932×humidity_norm
-- 0.000755×wind_speed_norm - 0.000649×UVA_norm - 0.266658×AOD_norm
-- 0.037238×age_norm + 0.002514×height_norm - 0.004346×weight_norm
-+ 0.005096×BMI_norm
-### 5. Comfort by Wind Speed
-comfort_wind = 0.605284 - 0.000202×temperature_norm - 0.000983×humidity_norm
-- 0.239010×wind_speed_norm - 0.000655×UVA_norm - 0.001607×AOD_norm
-- 0.001358×sex_norm + 0.001223×age_norm - 0.004744×height_norm
-+ 0.041076×weight_norm - 0.037158×BMI_norm
-
-
----
-
 ## Example Calculation
 
 **Input data:**
@@ -87,7 +53,14 @@ comfort_wind = 0.605284 - 0.000202×temperature_norm - 0.000983×humidity_norm
 - age = 35  
 - height = 175  
 - weight = 70  
-- BMI = 22.86  
+- BMI = 22.86
+  
+FORMULAS Example
+1. Temperature : formula : "0.648906 - 0.113674*temperature_norm + 0.006831*humidity_norm - 0.001155*wind_speed_norm + 0.002198* UVA_norm + 0.010385*AOD_norm - 0.002946*sex_norm - 0.028075*age_norm - 0.029417*height_norm + 0.051113*weight_norm - 0.064589*BMI_norm",
+2. Humidity: formula : "0.636105 - 0.005279*temperature_norm - 0.097257*humidity_norm + 0.004332*wind_speed_norm + 0.001107* UVA_norm - 0.002452*AOD_norm + 0.000287*sex_norm - 0.000399*age_norm - 0.052156*height_norm + 0.097753*weight_norm - 0.127599*BMI_norm",
+3. UVA : formula : "0.455344 + 0.000306*temperature_norm + 0.000452*humidity_norm - 0.000119*wind_speed_norm - 0.289377* UVA_norm + 0.000268*AOD_norm + 0.047674*sex_norm + 0.000190*age_norm + 0.000622*height_norm - 0.001603*weight_norm + 0.002149*BMI_norm",
+4. AOD:  formula : "0.422675 + 0.000438*temperature_norm - 0.000932*humidity_norm - 0.000755*wind_speed_norm - 0.000649* UVA_norm - 0.266658*AOD_norm - 0.037238*age_norm + 0.002514*height_norm - 0.004346*weight_norm + 0.005096*BMI_norm",
+5. Wind: formula : "0.605284 - 0.000202*temperature_norm - 0.000983*humidity_norm - 0.239010*wind_speed_norm - 0.000655*UVA_norm - 0.001607* AOD_norm - 0.001358*sex_norm + 0.001223*age_norm - 0.004744*height_norm + 0.041076*weight_norm - 0.037158*BMI_norm",
 
 **Results:**
 - comfort_temperature = `0.6578` (65.8%)  
@@ -161,5 +134,6 @@ Notes
 - Convert to percentages by multiplying by 100
 
 - The system accounts for both environmental conditions and individual characteristics
+
 
 
