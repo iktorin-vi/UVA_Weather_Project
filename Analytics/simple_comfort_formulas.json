@@ -1,0 +1,205 @@
+{
+  "model_type": "simplified_correlation_based",
+  "description": "Simple formulas based on correlation",
+  "normalization_required": true,
+  "input_range_suggestions": {
+    "temperature": [
+      10,
+      40
+    ],
+    "humidity": [
+      20,
+      90
+    ],
+    "wind_speed": [
+      0,
+      15
+    ],
+    "UVA": [
+      0,
+      12
+    ],
+    "AOD": [
+      0,
+      1
+    ],
+    "age": [
+      18,
+      85
+    ],
+    "BMI": [
+      15,
+      40
+    ],
+    "height": [
+      140,
+      200
+    ],
+    "weight": [
+      40,
+      120
+    ]
+  },
+  "comfort_models": {
+    "comfort_temperature": {
+      "weather_parameter": "temperature",
+      "formula": "comfort = 0.647 -0.241*temperature -0.216*temperature_age -0.206*temperature_BMI -0.067*age -0.021*sex_numeric",
+      "coefficients": {
+        "temperature": -0.24125180573383245,
+        "temperature_age": -0.21586458977585674,
+        "temperature_BMI": -0.2056269610841596,
+        "age": -0.0669009307215619,
+        "sex_numeric": -0.021439297770304983
+      },
+      "normalization": {
+        "means": {
+          "temperature": 24.741649999999996,
+          "age": 50.4175,
+          "BMI": 24.27305,
+          "height": 169.93245000000002,
+          "weight": 69.43979999999999
+        },
+        "stds": {
+          "temperature": 8.485426418763769,
+          "age": 19.06268309271669,
+          "BMI": 5.9486462235912745,
+          "height": 9.899172127097343,
+          "weight": 15.25839917332963
+        }
+      },
+      "expected_range": [
+        0,
+        1
+      ],
+      "interpretation": "1 =max comfort, 0 = min comfort"
+    },
+    "comfort_humidity": {
+      "weather_parameter": "humidity",
+      "formula": "comfort = 0.630 -0.220*humidity -0.206*humidity_BMI -0.137*humidity_age -0.037*BMI -0.031*weight",
+      "coefficients": {
+        "humidity": -0.22016420755254074,
+        "humidity_BMI": -0.20616293044307257,
+        "humidity_age": -0.13739584003965558,
+        "BMI": -0.03695591378823154,
+        "weight": -0.031127369753003183
+      },
+      "normalization": {
+        "means": {
+          "humidity": 55.380050000000004,
+          "age": 50.4175,
+          "BMI": 24.27305,
+          "height": 169.93245000000002,
+          "weight": 69.43979999999999
+        },
+        "stds": {
+          "humidity": 20.287220427003472,
+          "age": 19.06268309271669,
+          "BMI": 5.9486462235912745,
+          "height": 9.899172127097343,
+          "weight": 15.25839917332963
+        }
+      },
+      "expected_range": [
+        0,
+        1
+      ],
+      "interpretation": "1 =max comfort, 0 = min comfort"
+    },
+    "comfort_wind": {
+      "weather_parameter": "wind_speed",
+      "formula": "comfort = 0.608 -0.494*wind_speed -0.444*wind_speed_BMI -0.393*wind_speed_age +0.031*height +0.014*weight",
+      "coefficients": {
+        "wind_speed": -0.4941508470932899,
+        "wind_speed_BMI": -0.44357142023613005,
+        "wind_speed_age": -0.39299608020447274,
+        "height": 0.03111788668652746,
+        "weight": 0.013939666909405712
+      },
+      "normalization": {
+        "means": {
+          "wind_speed": 7.4306,
+          "age": 50.4175,
+          "BMI": 24.27305,
+          "height": 169.93245000000002,
+          "weight": 69.43979999999999
+        },
+        "stds": {
+          "wind_speed": 4.365967759528077,
+          "age": 19.06268309271669,
+          "BMI": 5.9486462235912745,
+          "height": 9.899172127097343,
+          "weight": 15.25839917332963
+        }
+      },
+      "expected_range": [
+        0,
+        1
+      ],
+      "interpretation": "1 =max comfort, 0 = min comfort"
+    },
+    "comfort_UVA": {
+      "weather_parameter": "UVA",
+      "formula": "comfort = 0.457 -0.493*UVA -0.443*UVA_BMI -0.390*UVA_age +0.086*sex_numeric -0.011*BMI",
+      "coefficients": {
+        "UVA": -0.49292393822664,
+        "UVA_BMI": -0.44304397635085924,
+        "UVA_age": -0.3900615004108833,
+        "sex_numeric": 0.08645599503797465,
+        "BMI": -0.010827045170319823
+      },
+      "normalization": {
+        "means": {
+          "UVA": 5.958200000000001,
+          "age": 50.4175,
+          "BMI": 24.27305,
+          "height": 169.93245000000002,
+          "weight": 69.43979999999999
+        },
+        "stds": {
+          "UVA": 3.5002526543554198,
+          "age": 19.06268309271669,
+          "BMI": 5.9486462235912745,
+          "height": 9.899172127097343,
+          "weight": 15.25839917332963
+        }
+      },
+      "expected_range": [
+        0,
+        1
+      ],
+      "interpretation": "1 =max comfort, 0 = min comfort"
+    },
+    "comfort_AOD": {
+      "weather_parameter": "AOD",
+      "formula": "comfort = 0.430 -0.493*AOD -0.431*AOD_BMI -0.418*AOD_age -0.081*age -0.013*height",
+      "coefficients": {
+        "AOD": -0.49270358417073523,
+        "AOD_BMI": -0.4306792129890426,
+        "AOD_age": -0.4183703659395473,
+        "age": -0.0806456408343816,
+        "height": -0.013303317105247006
+      },
+      "normalization": {
+        "means": {
+          "AOD": 0.53675,
+          "age": 50.4175,
+          "BMI": 24.27305,
+          "height": 169.93245000000002,
+          "weight": 69.43979999999999
+        },
+        "stds": {
+          "AOD": 0.27055653368373767,
+          "age": 19.06268309271669,
+          "BMI": 5.9486462235912745,
+          "height": 9.899172127097343,
+          "weight": 15.25839917332963
+        }
+      },
+      "expected_range": [
+        0,
+        1
+      ],
+      "interpretation": "1 =max comfort, 0 = min comfort"
+    }
+  }
+}
