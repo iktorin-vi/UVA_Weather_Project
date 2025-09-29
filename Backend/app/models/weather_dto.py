@@ -11,4 +11,8 @@ class WeatherDTO(BaseModel):
     aod: float
 
 class ComfortDTO(BaseModel):
-    pass
+    temperature: float
+    humidity: float
+    wind_speed: float
+    uva: float
+    aod: float
