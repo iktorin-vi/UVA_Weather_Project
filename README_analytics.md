@@ -33,9 +33,7 @@ Normalization formula: parameter_norm = (parameter - mean_value) / standard_devi
 >  `sex` is encoded as `0` (female) or `1` (male).
 
 ##  General Formula for Comfort Parameters
-comfort_X = β₀ + β₁×temperature_norm + β₂×humidity_norm + β₃×wind_speed_norm
-+ β₄×UVA_norm + β₅×AOD_norm + β₆×sex_norm + β₇×age_norm
-+ β₈×height_norm + β₉×weight_norm + β₁₀×BMI_norm
+comfort_X = β₀ + β₁×temperature_norm + β₂×humidity_norm + β₃×wind_speed_norm + β₄×UVA_norm + β₅×AOD_norm + β₆×sex_norm + β₇×age_norm + β₈×height_norm + β₉×weight_norm + β₁₀×BMI_norm
   
 - `β₀` — intercept  
 - `β₁-β₁₀` — coefficients for normalized parameters  
@@ -163,4 +161,5 @@ Notes
 - Convert to percentages by multiplying by 100
 
 - The system accounts for both environmental conditions and individual characteristics
+
 
