@@ -1,0 +1,42 @@
+{
+    "aod": [
+        {
+            "operator": ">",
+            "value": 0.5,
+            "text": "It is recommended to limit outdoor walks, especially for people with respiratory problems. Use protective masks."
+        }
+    ],
+    "uv": [
+        {
+            "operator": ">",
+            "value": 6,
+            "text": "Avoid direct sunlight. Use sunscreen and wear hats. People with skin problems are advised to stay indoors."
+        }
+    ],
+    "humidity": [
+        {
+            "operator": ">",
+            "value": 80,
+            "text": "It is advisable to reduce physical activity. People with cardiovascular problems are recommended to stay in cool rooms."
+        }
+    ],
+    "wind": [
+        {
+            "operator": ">",
+            "value": 10,
+            "text": "People with allergies should limit outdoor activities, as wind increases the concentration of pollen and dust."
+        }
+    ],
+    "temperature": [
+        {
+            "operator": "<",
+            "value": 0,
+            "text": "Dress warmly, and people with circulation problems should avoid long walks."
+        },
+        {
+            "operator": ">",
+            "value": 30,
+            "text": "Avoid overheating, drink enough water, and people with heart problems should stay indoors in a cool environment."
+        }
+    ]
+}

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UVA</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="app">
+
+  <header class="header">
+    <div class="brand">UVA</div> 
+  </header>
+      <div class="search">
+      <label class="pill">
+  <input id="cityInput" class="pill__input" type="text" placeholder="Enter the city name…" aria-label="City" autocomplete="off" />
+  <button id="searchBtn" type="button" class="btn-pill">
+    <img src="images/search.png" alt="">
+  </button>
+</label>
+</div>
+
+<div class="info-text">
+  Get a personalized weather forecast: temperature, UV, humidity, wind, and daily comfort for you.
+</div>
+<div id="appContent" hidden>
+  <main class="main container">
+
+    <section class="weather">
+        <div class="weather-app">
+            <img src="images/clouds.png" class="weather-icon">
+            <h1 class="temp">20°C</h1>
+            <div class="details">
+            <ul class="details-meta">
+        <li class="list-meta">Cloud: 40%</li>
+        <li class="list-meta">UV: 5</li>
+        <li class="list-meta">Wind: km/h</li>
+        <li class="list-meta">Humidity: 70%</li>
+        <li class="list-meta">AOD: 0.3</li>
+        <li class="list-meta">Rainfall: 2 mm</li>
+      </ul>
+      <img src="images/humidity.png" class="humidity-icon">
+      <img src="images/wind.png" class="wind-icon">
+        </div>
+        </div>
+    </section>
+
+    <section class="forecast">
+      <article class="daycard daycard--mist">
+        <h3 class="daycard__title">Day 1</h3>
+        <img
+              src="./images/clouds.png"
+              alt="Cloud"
+              width="88"
+              height="88"
+            />
+        <div class="daycard__icon"></div>
+        <div class="daycard__temp">18°C</div>
+        <div class="daycard__desc">clear</div>
+        
+      </article>
+      <article class="daycard daycard--mist">
+        <h3 class="daycard__title">Day 2</h3>
+        <img
+              src="./images/rain.png"
+              alt="Rain"
+              width="88"
+              height="88"
+            />
+        <div class="daycard__icon"></div>
+        <div class="daycard__temp">11°C</div>
+        <div class="daycard__desc">rain</div>
+      </article>
+      <article class="daycard daycard--mist">
+        <h3 class="daycard__title">Day 3</h3>
+        <img
+              src="./images/mist.png"
+              alt="Mist"
+              width="88"
+              height="88"
+            />
+        <div class="daycard__icon"></div>
+        <div class="daycard__temp">13°C</div>
+        <div class="daycard__desc">mist</div>
+      </article>
+      <article class="daycard daycard--mist">
+        <h3 class="daycard__title">Day 4</h3>
+        <img
+              src="./images/clouds.png"
+              alt="Cloud"
+              width="88"
+              height="88"
+            />
+        <div class="daycard__icon"></div>
+        <div class="daycard__temp">20°C</div>
+        <div class="daycard__desc">clear</div>
+      </article>
+      <article class="daycard daycard--mist">
+        <h3 class="daycard__title">Day 5</h3>
+        <img
+              src="./images/rain.png"
+              alt="Rain"
+              width="88"
+              height="88"
+            />
+        <div class="daycard__icon"></div>
+        <div class="daycard__temp">9°C</div>
+        <div class="daycard__desc">rain</div>
+      </article>
+    </section>
+
+          <h2 class="panel-personalized">Personalization:</h2>
+
+
+      <section class="panel">
+  <form class="formgrid" action="#">
+    <input class="input" type="number" placeholder="Age" aria-label="Age"  />
+    <input class="input" type="number" placeholder="Weight(kg)" aria-label="Weight"  />
+    <input class="input" type="number" placeholder="Height(cm)" aria-label="Height"  />
+    <select class="input" aria-label="Gender">
+      <option disabled selected>Gender</option>
+      <option>Female</option>
+      <option>Male</option>
+    </select>
+  </form>
+</section>
+
+
+<div class="search-calendar">
+<label class="calendar">
+  <input id="datePicker" class="pill__input" type="text" placeholder="dd/mm/yyyy" aria-label="Date" />
+  <button type="button" class="btn-pill" id="openDate">
+    <img src="images/Vector.png" alt="Open calendar">
+  </button>
+</label>
+</div>
+
+
+    <div class="analysis">
+  <button id="analysisBtn" class="btn btn--wide is-hidden" type="button">Analysis</button>
+        </div>
+
+
+
+<!-- КУДИ ПОТРІБНО у верстці -->
+<div id="illnessDropdown" class="dropdown is-hidden"></div>
+
+
+
+
+</section>
+    <section class="comfort">
+      <h2 class="section-title">Comfort for you:</h2>
+      <div class="capsules">
+  <div class="capsule-item">
+    <div class="capsule">
+      <span class="capsule__fill" style="--fill: 65%"></span>
+    </div>
+    <p class="capsule-text">temperature</p>
+  </div>
+
+  <div class="capsule-item">
+    <div class="capsule">
+      <span class="capsule__fill" style="--fill: 40%"></span>
+    </div>
+    <p class="capsule-text">UV</p>
+  </div>
+
+  <div class="capsule-item">
+    <div class="capsule">
+      <span class="capsule__fill" style="--fill: 55%"></span>
+    </div>
+    <p class="capsule-text">wind</p>
+  </div>
+
+  <div class="capsule-item">
+    <div class="capsule">
+      <span class="capsule__fill" style="--fill: 60%"></span>
+    </div>
+    <p class="capsule-text">humidity</p>
+  </div>
+
+  <div class="capsule-item">
+    <div class="capsule">
+      <span class="capsule__fill" style="--fill: 35%"></span>
+    </div>
+    <p class="capsule-text">AOD</p>
+  </div>
+</div>
+
+
+      <div class="circle">
+        <span class="circle__value">55%</span>
+      </div>
+    </section>
+  </main>
+</div>
+
+  <footer class="footer">
+    Prepared for an exhibition at the hackathon by the UVA team
+  </footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="js/script.js" defer></script>
+
+
+
+
+</body>
+</html>
