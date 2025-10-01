@@ -18,31 +18,7 @@ def _load_json(path: Path, default: dict) -> dict:
 
 COEFFICIENTS = _load_json(COEFFICIENTS_FILE, {"formulas": {}})
 
-DEFAULT_ADVICE_RULES = {
-    "aod": [
-        {"operator": ">", "value": 0.5,
-         "text": "Рекомендується обмежити прогулянки на вулиці, особливо людям із проблемами дихальної системи. Використовуйте захисні маски."}
-    ],
-    "uv": [
-        {"operator": ">", "value": 6,
-         "text": "Слід уникати прямого сонячного випромінювання. Використовуйте сонцезахисний крем та носіть головні убори. Людям зі шкірними проблемами бажано залишатися вдома."}
-    ],
-    "humidity": [
-        {"operator": ">", "value": 80,
-         "text": "Фізичні навантаження варто зменшити. Людям із серцево-судинними проблемами рекомендується перебувати у прохолодних приміщеннях."}
-    ],
-    "wind": [
-        {"operator": ">", "value": 10,
-         "text": "Особи з алергіями повинні обмежити перебування надворі, оскільки вітер підвищує концентрацію пилку та пилу."}
-    ],
-    "temperature": [
-        {"operator": "<", "value": 0,
-         "text": "Тепло одягайтеся, людям із проблемами кровообігу варто уникати довгих прогулянок."},
-        {"operator": ">", "value": 30,
-         "text": "Уникайте перегріву, пийте достатньо води, людям із серцевими проблемами краще залишатися вдома у прохолоді."}
-    ]
-}
-ADVICE_RULES = _load_json(ADVICE_RULES_FILE, DEFAULT_ADVICE_RULES)
+ADVICE_RULES = _load_json(ADVICE_RULES_FILE, {"aod": [], "uv": [], "humidity": [], "wind": [], "temperature": []})
 
 class Sex(Enum):
     female = 0
@@ -87,7 +63,7 @@ class ComfortService:
         def apply(metric_key: str, value: float):
             rules = ADVICE_RULES.get(metric_key, [])
             for r in rules:
-                op = r.get("operator") or r.get("operatior")
+                op = r.get("operator")
                 threshold = float(r.get("value", 0.0))
                 text = str(r.get("text", ""))
                 ok = False
