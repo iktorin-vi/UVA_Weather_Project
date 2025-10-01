@@ -1,7 +1,8 @@
 from pydantic import BaseModel
-from app.services.comfort_service import Sex
+from typing import Dict, Optional
 
 class WeatherDTO(BaseModel):
+    date: Optional[str] = None
     humidity: float
     temperature: float
     windspeed: float
@@ -16,3 +17,6 @@ class ComfortDTO(BaseModel):
     wind_speed: float
     uva: float
     aod: float
+    simple_avg: float = 0.0
+    weighted_avg: float = 0.0
+    advice: Dict[str, str] = {}
