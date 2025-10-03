@@ -4,7 +4,7 @@ const $  = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 const round = (x, d = 0) => Number.parseFloat(x).toFixed(d);
 
-// Мапа іконок за погодою (спрощено)
+// Мапа іконок за погодою 
 function pickIcon({ temperature, precipitation_prob, cloudcover }) {
   if (precipitation_prob >= 50) return 'images/rain.png';
   if (cloudcover >= 80)        return 'images/clouds.png';
@@ -293,20 +293,29 @@ async function buildRecommendationsUI(currentWeather){
 }
 
 // ======================  ПРОГНОЗ / РЕНДЕР  ======================
-async function getForecast(city){
-  const url = `http://127.0.0.1:8000/weather/forecast?city=${encodeURIComponent(city)}`;
-  try{
+
+async function getApiBaseUrl() {
+  const res = await fetch('data/config.json');
+  const cfg = await res.json();
+  return cfg.API_BASE_URL;
+}
+
+
+async function getForecast(city) {
+  const baseUrl = await getApiBaseUrl();
+  const url = `${baseUrl}/weather/forecast?city=${encodeURIComponent(city)}`;
+  try {
     const r = await fetch(url);
     if (!r.ok) throw new Error('backend error');
     return await r.json();
-  }catch(_){
-
+  } catch (_) {
     const local = `data/${city.toLowerCase()}.json`;
     const r2 = await fetch(local);
     if (!r2.ok) throw new Error(`no local data: ${local}`);
     return await r2.json();
   }
 }
+
 
 function drawHero(day){
   heroTempEl.textContent = `${Math.round(day.temperature)}°C`;
