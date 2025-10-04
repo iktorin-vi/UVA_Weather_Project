@@ -269,6 +269,7 @@ main{ flex:1; }
 .panel-personalized{
   margin:40px 250px; 
   font:700 24px 'Kantumruy Pro', sans-serif;
+  align-items: center;
 }
 .panel{ 
   display:flex; 

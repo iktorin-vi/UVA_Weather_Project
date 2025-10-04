@@ -1,0 +1,84 @@
+{
+    "kyiv": {
+        "2025-10-02": {
+            "date": "2025-10-02",
+            "humidity": 89.0,
+            "temperature": 5.5,
+            "windspeed": 2.47,
+            "percipitation_probability": 88.0,
+            "uv_index": 0,
+            "cloudcover": 100.0,
+            "aod": 0.21541666666666667
+        },
+        "2025-10-03": {
+            "date": "2025-10-03",
+            "humidity": 87.0,
+            "temperature": 8.1,
+            "windspeed": 2.82,
+            "percipitation_probability": 8.0,
+            "uv_index": 2,
+            "cloudcover": 99.0,
+            "aod": 0.24250000000000002
+        },
+        "2025-10-04": {
+            "date": "2025-10-04",
+            "humidity": 75.0,
+            "temperature": 9.9,
+            "windspeed": 3.06,
+            "percipitation_probability": 38.0,
+            "uv_index": 3,
+            "cloudcover": 89.0,
+            "aod": 0.19583333333333333
+        },
+        "2025-10-05": {
+            "date": "2025-10-05",
+            "humidity": 88.0,
+            "temperature": 11.5,
+            "windspeed": 2.4,
+            "percipitation_probability": 16.0,
+            "uv_index": 1,
+            "cloudcover": 94.0,
+            "aod": 0.18833333333333335
+        },
+        "2025-10-06": {
+            "date": "2025-10-06",
+            "humidity": 88.0,
+            "temperature": 10.2,
+            "windspeed": 1.8,
+            "percipitation_probability": 38.0,
+            "uv_index": 2,
+            "cloudcover": 94.0,
+            "aod": 0.09583333333333333
+        },
+        "2025-10-07": {
+            "date": "2025-10-07",
+            "humidity": 89.0,
+            "temperature": 9.7,
+            "windspeed": 1.97,
+            "percipitation_probability": 33.0,
+            "uv_index": 3,
+            "cloudcover": 92.0,
+            "aod": 0.0
+        },
+        "2025-10-08": {
+            "date": "2025-10-08",
+            "humidity": 86.0,
+            "temperature": 9.2,
+            "windspeed": 2.48,
+            "percipitation_probability": 23.0,
+            "uv_index": 1,
+            "cloudcover": 68.0,
+            "aod": 0.0
+        },
+        "2025-10-09": {
+            "date": "2025-10-09",
+            "humidity": 81.0,
+            "temperature": 10.5,
+            "windspeed": 3.22,
+            "percipitation_probability": 55.0,
+            "uv_index": 1,
+            "cloudcover": 67.0,
+            "aod": 0.0
+        }
+    }
+}
